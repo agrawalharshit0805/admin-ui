@@ -1,0 +1,45 @@
+<div>
+    <div id="maintenance-period-toolbar">
+      <button id="maintenance-period-create-button" class="btn" (click)="openCreateDialog()" [disabled]="federalServer">
+        <i class="fa fa-plus-square"></i><span translate>Create</span>
+      </button>
+      &nbsp;
+    </div>
+  
+    <div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th translate>Name</th>
+            <th translate>Start_Date</th>
+            <th translate>End_Date</th>
+            <th translate>Managed_Object_Type</th>
+            <th translate>Actions</th>
+          </tr>
+          <tr>
+            <td><input id="Filter-Name" type="text" class="textFilter form-control" data-field-name="name" [(ngModel)]="maintenancePeriodsFilters.name" (ngModelChange)="loadMaintenancePeriods()" placeholder="{{ 'Filter' | translate}}" /></td>
+            <td></td>
+            <td></td>
+            <td><input id="Filter-Moc" type="text" class="textFilter form-control" data-field-name="moc" [(ngModel)]="maintenancePeriodsFilters.moc" (ngModelChange)="loadMaintenancePeriods()" placeholder="{{ 'Filter' | translate}}" /></td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let maintenancePeriod of maintenancePeriods" [id]="'maintenancePeriod-' + maintenancePeriod.id" [ngClass]="{'old': maintenancePeriod.end < now}">
+            <td class="align-left">{{maintenancePeriod.name}}</td>
+            <td class="align-left">{{maintenancePeriod.start | date:'yyyy/MM/dd hh:00 a'}}</td>
+            <td class="align-left">{{maintenancePeriod.end | date:'yyyy/MM/dd hh:00 a'}}</td>
+            <td class="align-left">{{maintenancePeriod.moc}} ({{maintenancePeriod.mois.length}})</td>
+            <td class="align-center">
+                <button [id]="'Edit-' + maintenancePeriod.id" class="btn" title="{{'Edit' | translate}}" (click)="edit(maintenancePeriod)" [disabled]="federalServer">
+                    <i class="fa fa-edit fa-lg"></i></button>
+                <button [id]="'Delete-' + maintenancePeriod.id" class="btn" title="{{'Delete' | translate}}" (click)="del(maintenancePeriod)" [disabled]="federalServer">
+                    <i class="fa fa-times fa-lg"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="bottomSpinner" *ngIf="loading"><i class="fa fa-spinner fa-spin fa-2x"></i></div>
+    </div>
+  </div>
+  

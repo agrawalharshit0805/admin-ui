@@ -1,0 +1,87 @@
+#maintenance-period-toolbar {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+#maintenance-period-create-button {
+	position: absolute;
+	top: 0;
+	left: 4px;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+
+.btn {
+	background-color: #00617F;
+	border: 1px solid #00617F;
+	color: #EEE;
+	height: 28px;
+	padding: 4px 10px;
+}
+
+.btn span {
+	margin-left: 5px;
+}
+
+.btn-primary {
+	color: white !important;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+	background-color: #00617F;
+	color: white;
+}
+
+.btn[disabled] {
+	background-color: #00617F;
+	border: 1px solid #CCC;
+	color: #CCC;
+}
+
+.btn[disabled]:hover {
+	background-color: #00617F;
+	border: 1px solid #CCC;
+	color: #CCC;
+}
+
+table.data-table {
+	width: 100%;
+	min-width: 800px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+table.data-table td {
+	padding: 2px;
+	border: 1px solid #CCC;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+table.data-table th {
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #CCC;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background-color: #00617F;
+	color: white;
+	font-size: 14px;
+	font-weight: normal;
+}
+table.data-table tr:nth-child(even) {
+	background-color:#EEE;
+}
+
+table.data-table td .btn {
+	height: 24px;
+	padding: 4px 6px;
+}

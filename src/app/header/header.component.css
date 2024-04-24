@@ -1,0 +1,38 @@
+.branding {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 7px 16px 0px 0px
+}
+
+.logo-text {
+	margin: 0px 5px 0px 16px;
+	color: #777;
+	font-size: 18px;
+}
+
+.logo-img {
+    margin-top: 5px;
+
+}
+
+.logo-product {
+	font-weight: bold;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#logout {
+	position: absolute;
+	top: 16px;
+	right: 20px;
+}
+
+#logout * {
+	color: white;
+}
